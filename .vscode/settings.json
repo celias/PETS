@@ -1,0 +1,8 @@
+{
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "\"Fira Code\"",
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.fontWeight": "200",
+    "prettier.arrowParens": "avoid",
+}
