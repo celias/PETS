@@ -3,5 +3,6 @@ node_modules
 .babelrc
 .cache
 settings.json
-.vscode
 dist
+*.log
+.DS_Store
