@@ -25056,7 +25056,7 @@ function (_React$Component) {
 
       petfinder.pet.find({
         output: 'full',
-        location: '94701',
+        location: 'San Francisco, CA',
         animal: 'cat'
       }).then(function (data) {
         var pets;
@@ -32415,7 +32415,120 @@ var global = arguments[3];
     SyncLoader: _SyncLoader2.default
   };
 });
-},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"Details.js":[function(require,module,exports) {
+},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"Carousel.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Carousel =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Carousel, _React$Component);
+
+  function Carousel() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    var _temp;
+
+    _classCallCheck(this, Carousel);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Carousel)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      photos: [],
+      active: 0
+    }, _this.handleIndexClick = function (event) {
+      _this.setState({
+        // the plus sign takes a string an coerces it into being
+        // a number.
+        active: +event.target.dataset.index
+      });
+    }, _temp));
+  }
+
+  _createClass(Carousel, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$state = this.state,
+          photos = _this$state.photos,
+          active = _this$state.active;
+      return _react.default.createElement("div", {
+        className: "carousel"
+      }, _react.default.createElement("img", {
+        src: photos[active].value,
+        alt: "animal"
+      }), _react.default.createElement("div", {
+        className: "carousel-smaller"
+      }, photos.map(function (photo, index) {
+        return (// only buttons should have onClick handlers - needs to be refactored
+
+          /* eslint-disable-next-line */
+          _react.default.createElement("img", {
+            onClick: _this2.handleIndexClick,
+            "data-index": index,
+            key: photo.value,
+            src: photo.value,
+            className: index === active ? 'active' : '',
+            alt: "animal thumnbail"
+          })
+        );
+      })));
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(_ref) {
+      var media = _ref.media;
+      var photos = [];
+
+      if (media && media.photos && media.photos.photo) {
+        photos = media.photos.photo.filter(function (photo) {
+          return photo['@size'] === 'pn';
+        });
+      }
+
+      return {
+        photos: photos
+      };
+    }
+  }]);
+
+  return Carousel;
+}(_react.default.Component);
+
+var _default = Carousel;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"Details.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32427,7 +32540,11 @@ var _react = _interopRequireDefault(require("react"));
 
 var _petfinderClient = _interopRequireDefault(require("petfinder-client"));
 
+var _router = require("@reach/router");
+
 var _reactSpinners = require("react-spinners");
+
+var _Carousel = _interopRequireDefault(require("./Carousel"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32505,7 +32622,7 @@ function (_React$Component) {
           loading: false
         });
       }).catch(function (err) {
-        navigate('/');
+        (0, _router.navigate)('/');
       });
     }
   }, {
@@ -32520,10 +32637,13 @@ function (_React$Component) {
           animal = _this$state.animal,
           breed = _this$state.breed,
           description = _this$state.description,
-          location = _this$state.location;
+          location = _this$state.location,
+          media = _this$state.media;
       return _react.default.createElement("div", {
         className: "details"
-      }, _react.default.createElement("div", null, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, animal, " - ", breed, " - ", location), _react.default.createElement("p", null, description)));
+      }, _react.default.createElement(_Carousel.default, {
+        media: media
+      }), _react.default.createElement("div", null, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, animal, " - ", breed, " - ", location), _react.default.createElement("p", null, description)));
     }
   }]);
 
@@ -32532,7 +32652,7 @@ function (_React$Component) {
 
 var _default = Details;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","petfinder-client":"../node_modules/petfinder-client/index.js","react-spinners":"../node_modules/react-spinners/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","petfinder-client":"../node_modules/petfinder-client/index.js","@reach/router":"../node_modules/@reach/router/es/index.js","react-spinners":"../node_modules/react-spinners/index.js","./Carousel":"Carousel.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32620,7 +32740,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49785" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51820" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
