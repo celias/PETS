@@ -2,3 +2,6 @@ node_modules
 .env
 .babelrc
 .cache
+settings.json
+.vscode
+dist
