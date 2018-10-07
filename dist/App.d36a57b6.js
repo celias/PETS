@@ -24967,6 +24967,7 @@ function (_React$Component) {
           contact = _this$props.contact,
           id = _this$props.id;
       var photos = [];
+      var value;
 
       if (media && media.photos && media.photos.photo) {
         photos = media.photos.photo.filter(function (photo) {
@@ -24974,13 +24975,14 @@ function (_React$Component) {
         });
       }
 
+      console.log(props);
       return _react.default.createElement(_router.Link, {
         to: "details/".concat(id),
         className: "pet"
       }, _react.default.createElement("div", {
         className: "image-container"
       }, _react.default.createElement("img", {
-        src: photos[0].value,
+        src: photos[0],
         alt: name
       })), _react.default.createElement("div", {
         className: "info"
@@ -25056,7 +25058,7 @@ function (_React$Component) {
 
       petfinder.pet.find({
         output: 'full',
-        location: 'San Francisco, CA',
+        location: 'Seattle, WA',
         animal: 'cat'
       }).then(function (data) {
         var pets;
@@ -32740,7 +32742,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55281" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
