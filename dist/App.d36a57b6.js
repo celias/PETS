@@ -24964,10 +24964,9 @@ function (_React$Component) {
           animal = _this$props.animal,
           breed = _this$props.breed,
           media = _this$props.media,
-          contact = _this$props.contact,
+          location = _this$props.location,
           id = _this$props.id;
       var photos = [];
-      var value;
 
       if (media && media.photos && media.photos.photo) {
         photos = media.photos.photo.filter(function (photo) {
@@ -24975,18 +24974,23 @@ function (_React$Component) {
         });
       }
 
-      console.log(props);
+      var hero = 'http://placecorgi.com/300/300';
+
+      if (photos[0] && photos[0].value) {
+        hero = photos[0].value;
+      }
+
       return _react.default.createElement(_router.Link, {
-        to: "details/".concat(id),
+        to: "/details/".concat(id),
         className: "pet"
       }, _react.default.createElement("div", {
         className: "image-container"
       }, _react.default.createElement("img", {
-        src: photos[0],
+        src: hero,
         alt: name
       })), _react.default.createElement("div", {
         className: "info"
-      }, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, "".concat(animal, " \u2014 ").concat(breed, " \u2014 ").concat(contact))));
+      }, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, "".concat(animal, " \u2014 ").concat(breed, " \u2014 ").concat(location))));
     }
   }]);
 
@@ -32470,8 +32474,6 @@ function (_React$Component) {
       active: 0
     }, _this.handleIndexClick = function (event) {
       _this.setState({
-        // the plus sign takes a string an coerces it into being
-        // a number.
         active: +event.target.dataset.index
       });
     }, _temp));
@@ -32493,18 +32495,14 @@ function (_React$Component) {
       }), _react.default.createElement("div", {
         className: "carousel-smaller"
       }, photos.map(function (photo, index) {
-        return (// only buttons should have onClick handlers - needs to be refactored
-
-          /* eslint-disable-next-line */
-          _react.default.createElement("img", {
-            onClick: _this2.handleIndexClick,
-            "data-index": index,
-            key: photo.value,
-            src: photo.value,
-            className: index === active ? 'active' : '',
-            alt: "animal thumnbail"
-          })
-        );
+        return _react.default.createElement("img", {
+          key: photo.value,
+          onClick: _this2.handleIndexClick,
+          "data-index": index,
+          src: photo.value,
+          className: index === active ? 'active' : '',
+          alt: "animal thumnbail"
+        });
       })));
     }
   }], [{
@@ -32742,7 +32740,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55281" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50044" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -1,5 +1,4 @@
 import React from 'react';
-
 class Carousel extends React.Component {
 	state = {
 		photos: [],
@@ -11,14 +10,11 @@ class Carousel extends React.Component {
 		if (media && media.photos && media.photos.photo) {
 			photos = media.photos.photo.filter(photo => photo['@size'] === 'pn');
 		}
-
 		return { photos };
 	}
 
 	handleIndexClick = event => {
 		this.setState({
-			// the plus sign takes a string an coerces it into being
-			// a number.
 			active: +event.target.dataset.index
 		});
 	};
@@ -29,12 +25,10 @@ class Carousel extends React.Component {
 				<img src={photos[active].value} alt="animal" />
 				<div className="carousel-smaller">
 					{photos.map((photo, index) => (
-						// only buttons should have onClick handlers - needs to be refactored
-						/* eslint-disable-next-line */
 						<img
+							key={photo.value}
 							onClick={this.handleIndexClick}
 							data-index={index}
-							key={photo.value}
 							src={photo.value}
 							className={index === active ? 'active' : ''}
 							alt="animal thumnbail"
