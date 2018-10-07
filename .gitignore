@@ -3,5 +3,5 @@ node_modules
 .babelrc
 .cache
 settings.json
-./vscode
-./dist
+.vscode
+.dist
