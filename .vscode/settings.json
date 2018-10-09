@@ -5,4 +5,6 @@
     "editor.tabSize": 2,
     "editor.fontWeight": "200",
     "prettier.arrowParens": "avoid",
+    "prettier.useTabs": false,
+    
 }
