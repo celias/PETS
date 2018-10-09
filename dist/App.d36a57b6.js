@@ -32722,9 +32722,14 @@ function (_React$Component) {
     }, _this.handleAnimalChange = function (event) {
       _this.setState({
         animal: event.target.value
+      }, _this.getBreeds);
+    }, _this.handleBreedChange = function (event) {
+      _this.setState({
+        breed: event.target.value
       });
     }, _temp));
   } // state is going to reflect the three search parameters needed
+  // setState batches all the updates together
 
 
   _createClass(SearchParams, [{
@@ -32734,22 +32739,31 @@ function (_React$Component) {
     value: function getBreeds() {
       var _this2 = this;
 
+      // If I have an animal selected, then I want to get breeds
       if (this.state.animal) {
         petfinder.breed.list({
           animal: this.state.animal
         }) // Returns a Promise
         .then(function (data) {
-          if (data.petfinder && data.petfinder.breeds && Array.isArray(data.petfinder.breeds.breed.isArray)) {
+          if (data.petfinder && // Check if pf API exists.
+          data.petfinder.breeds && // Check if breeds exists.
+          // Check that breed is going to be an array of breeds
+          // becuase some animals like pig do not have a breed selection.
+          Array.isArray(data.petfinder.breeds.breed)) {
             _this2.setState({
               breeds: data.petfinder.breeds.breed
             });
           } else {
+            // If a particular animal doesn't have any breeds
+            // check for no breeds in that animal i.e. Pig
             _this2.setState({
               breeds: []
             });
           }
-        });
+        }).catch(console.error);
       } else {
+        // If no animal is selected from the drop down
+        // return empty array because we don't want to return breeds in that case.
         this.setState({
           breeds: []
         });
@@ -32780,7 +32794,21 @@ function (_React$Component) {
           key: animal,
           value: animal
         }, animal);
-      }))));
+      }))), _react.default.createElement("label", {
+        htmlFor: "breed"
+      }, "Breed", _react.default.createElement("select", {
+        disabled: this.state.breeds.length === 0 // no selection for an animal with no breed
+        ,
+        id: "breed",
+        value: this.state.breed,
+        onChange: this.handleBreedChange,
+        onBlur: this.handleBreedChange
+      }, _react.default.createElement("option", null), this.state.breeds.map(function (breed) {
+        return _react.default.createElement("option", {
+          key: breed,
+          value: breed
+        }, breed);
+      }))), _react.default.createElement("button", null, "Submit"));
     }
   }]);
 
