@@ -32703,7 +32703,7 @@ function (_React$Component) {
     }
 
     return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SearchParams)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      location: '',
+      location: 'Seattle, WA',
       animal: '',
       breed: ''
     }, _this.handleLocationChange = function (event) {
@@ -32712,11 +32712,11 @@ function (_React$Component) {
       });
     }, _this.handleAnimalChange = function (event) {
       _this.setState({
-        animal: event.target.animal
+        animal: event.target.value
       });
     }, _this.handleBreedChange = function (event) {
       _this.setState({
-        breed: event.target.breed
+        breed: event.target.value
       });
     }, _temp));
   } // state is going to reflect the three search parameters needed
@@ -32724,24 +32724,25 @@ function (_React$Component) {
 
   _createClass(SearchParams, [{
     key: "render",
+    // Array of strings of animals coming from the petfinder client
     value: function render() {
       return _react.default.createElement("div", {
         className: "search-params"
-      }, this.state.location, _react.default.createElement("label", {
+      }, _react.default.createElement("label", {
         htmlFor: "location"
-      }, "Location:", _react.default.createElement("input", {
+      }, this.state.location, _react.default.createElement("input", {
+        onChange: this.handleLocationChange,
         id: "location",
         value: this.state.location,
-        placeholder: "Location",
-        onChange: this.handleLocationChange
-      })), "Animal", _react.default.createElement("label", {
-        forHTML: "animal"
-      }, _react.default.createElement("select", {
+        placeholder: "Location"
+      })), _react.default.createElement("label", {
+        htmlFor: "animal"
+      }, "Animal", _react.default.createElement("select", {
         id: "animal",
         value: this.state.animal,
-        onChange: this.handleAnimalChange,
-        onBlur: this.handleAnimalChange
-      }), _react.default.createElement("option", null), _react.default.createElement("select", null, _petfinderClient.ANIMALS.map(function (animal) {
+        onBlur: this.handleAnimalChange,
+        onChange: this.handleAnimalChange
+      }, _react.default.createElement("option", null), _petfinderClient.ANIMALS.map(function (animal) {
         return _react.default.createElement("option", {
           key: animal,
           value: animal
@@ -32847,7 +32848,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50044" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59619" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

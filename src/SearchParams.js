@@ -4,7 +4,7 @@ import { ANIMALS } from 'petfinder-client';
 class SearchParams extends React.Component {
 	// state is going to reflect the three search parameters needed
 	state = {
-		location: '',
+		location: 'Seattle, WA',
 		animal: '',
 		breed: ''
 	};
@@ -17,39 +17,37 @@ class SearchParams extends React.Component {
 
 	handleAnimalChange = event => {
 		this.setState({
-			animal: event.target.animal
+			animal: event.target.value
 		});
 	};
 
 	handleBreedChange = event => {
 		this.setState({
-			breed: event.target.breed
+			breed: event.target.value
 		});
 	};
-
+	// Array of strings of animals coming from the petfinder client
 	render() {
 		return (
 			<div className="search-params">
-				{this.state.location}
 				<label htmlFor="location">
-					Location:
+					{this.state.location}
 					<input
+						onChange={this.handleLocationChange}
 						id="location"
 						value={this.state.location}
 						placeholder="Location"
-						onChange={this.handleLocationChange}
 					/>
 				</label>
-				Animal
-				<label forHTML="animal">
+				<label htmlFor="animal">
+					Animal
 					<select
 						id="animal"
 						value={this.state.animal}
-						onChange={this.handleAnimalChange}
 						onBlur={this.handleAnimalChange}
-					/>
-					<option />
-					<select>
+						onChange={this.handleAnimalChange}
+					>
+						<option />
 						{ANIMALS.map(animal => (
 							<option key={animal} value={animal}>
 								{animal}
