@@ -7,12 +7,17 @@ import Results from "./Results";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 
+const petfinder = pf({
+  key: process.env.API_KEY,
+  secret: process.env.API_SECRET
+});
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      location: "Seattle, WA",
+      location: "",
       animal: "",
       breed: "",
       breeds: [],

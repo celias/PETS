@@ -4,8 +4,12 @@ import React from "react";
 import { ANIMALS } from "petfinder-client";
 import { Consumer } from "./SearchContext";
 
-class SearchParams extends React.Component {
-  // Array of strings of animals coming from the petfinder client
+class SearchBox extends React.Component {
+  handleFormSubmit = e => {
+    e.preventDefault();
+    this.props.search();
+  };
+
   render() {
     return (
       // Wrapping the return in consumer makes all of the data available from App inside
@@ -14,50 +18,52 @@ class SearchParams extends React.Component {
       <Consumer>
         {context => (
           <div className="search-params">
-            <label htmlFor="location">
-              {this.state.location}
-              <input
-                onChange={this.handleLocationChange}
-                id="location"
-                value={this.state.location}
-                placeholder="Location"
-              />
-            </label>
-            <label htmlFor="animal">
-              Animal
-              <select
-                id="animal"
-                value={this.state.animal}
-                onBlur={this.handleAnimalChange}
-                onChange={this.handleAnimalChange}
-              >
-                <option />
-                {ANIMALS.map(animal => (
-                  <option key={animal} value={animal}>
-                    {animal}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <form onSubmit={this.handleFormSubmit}>
+              <label htmlFor="location">
+                Location
+                <input
+                  onChange={context.handleLocationChange}
+                  id="location"
+                  value={context.location}
+                  placeholder="Location"
+                />
+              </label>
+              <label htmlFor="animal">
+                Animal
+                <select
+                  id="animal"
+                  value={context.animal}
+                  onBlur={context.handleAnimalChange}
+                  onChange={context.handleAnimalChange}
+                >
+                  <option />
+                  {ANIMALS.map(animal => (
+                    <option key={animal} value={animal}>
+                      {animal}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label htmlFor="breed">
-              Breed
-              <select
-                disabled={this.state.breeds.length === 0} // no selection for an animal with no breed
-                id="breed"
-                value={this.state.breed}
-                onChange={this.handleBreedChange}
-                onBlur={this.handleBreedChange}
-              >
-                <option />
-                {this.state.breeds.map(breed => (
-                  <option key={breed} value={breed}>
-                    {breed}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <button>Submit</button>
+              <label htmlFor="breed">
+                Breed
+                <select
+                  disabled={context.breeds.length === 0} // no selection for an animal with no breed
+                  id="breed"
+                  value={context.breed}
+                  onChange={context.handleBreedChange}
+                  onBlur={context.handleBreedChange}
+                >
+                  <option />
+                  {context.breeds.map(breed => (
+                    <option key={breed} value={breed}>
+                      {breed}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button>Submit</button>
+            </form>
           </div>
         )}
       </Consumer>
@@ -65,4 +71,4 @@ class SearchParams extends React.Component {
   }
 }
 
-export default SearchParams;
+export default SearchBox;

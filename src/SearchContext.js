@@ -2,7 +2,7 @@ import React from "react";
 
 // React Context creates a provider component and a consumer component
 const SearchContext = React.createContext({
-  location: "Seattle, WA",
+  location: "",
   animal: "",
   breed: "",
   breeds: [],
