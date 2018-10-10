@@ -32654,10 +32654,11 @@ function (_React$Component) {
       var _this$state = this.state,
           photos = _this$state.photos,
           active = _this$state.active;
+      var hero = photos[active] ? photos[active].value : "http://placecorgi.com/300/300";
       return _react.default.createElement("div", {
         className: "carousel"
       }, _react.default.createElement("img", {
-        src: photos[active].value,
+        src: hero,
         alt: "animal"
       }), _react.default.createElement("div", {
         className: "carousel-smaller"
@@ -32667,7 +32668,7 @@ function (_React$Component) {
           onClick: _this2.handleIndexClick,
           "data-index": index,
           src: photo.value,
-          className: index === active ? 'active' : '',
+          className: index === active ? "active" : "",
           alt: "animal thumnbail"
         });
       })));
@@ -32680,7 +32681,7 @@ function (_React$Component) {
 
       if (media && media.photos && media.photos.photo) {
         photos = media.photos.photo.filter(function (photo) {
-          return photo['@size'] === 'pn';
+          return photo["@size"] === "pn";
         });
       }
 
@@ -33070,7 +33071,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54436" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55380" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
