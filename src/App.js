@@ -2,11 +2,11 @@ import React from "react";
 import { render } from "react-dom";
 import { Router } from "@reach/router";
 import pf from "petfinder-client";
-import { Provider } from "./SearchContext";
 import Results from "./Results";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 import NavBar from "./NavBar";
+import { Provider } from "./SearchContext";
 
 const petfinder = pf({
   key: process.env.API_KEY,
