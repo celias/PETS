@@ -42,10 +42,12 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "emotion": "^9.2.12",
     "parcel-plugin-clean-dist": "0.0.6",
     "petfinder-client": "0.0.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-emotion": "^9.2.12",
     "react-spinners": "^0.4.5"
   }
 }
