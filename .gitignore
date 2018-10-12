@@ -6,4 +6,4 @@ settings.json
 dist
 *.log
 .DS_Store
-coverage
+coverage 
