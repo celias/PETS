@@ -1,9 +1,13 @@
 {
   "name": "pet_finder",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An app for locating animals for adoption.",
+  "main": "src/App.js",
   "scripts": {
+    "test": "jest --silent",
+    "test:update": "jest --silent -u",
+    "test:watch": "jest --silent --watch",
+    "test:coverage": "jest --silent --coverage",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
