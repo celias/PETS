@@ -1,3 +1,4 @@
+
 import React from "react";
 import { render } from "react-dom";
 import { Router, Link } from "@reach/router";
@@ -86,7 +87,7 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <Link to="/">Adopt me!</Link>
+          <Link to="/">Petfinder</Link>
           <Link to="/search-params">
             <span aria-label="search" role="img">
               🔍

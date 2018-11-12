@@ -9,7 +9,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "dev": "parcel src/index.html",
     "dev-clear": "rm -rf .cache && parcel src/index.html",
-    "prebuild": "rm -rf dist"
+    "prebuild": "rm -rf dist",
+    "start": "serve"
   },
   "author": "GeeDiv",
   "license": "ISC",
@@ -36,10 +37,12 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "now": "^12.0.1",
     "parcel-plugin-clean-dist": "0.0.6",
     "petfinder-client": "0.0.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-spinners": "^0.4.5"
+    "react-spinners": "^0.4.5",
+    "serve": "^10.0.2"
   }
 }
